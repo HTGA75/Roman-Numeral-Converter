@@ -1,0 +1,85 @@
+:root{
+  --box-bg: rgba(214, 171, 84, 0.502);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  background: linear-gradient(
+    to right,
+    rgb(153, 0, 255),
+    rgb(255, 192, 254)
+  );
+  color: rgba(0, 0, 0, 0.938);
+}
+
+h1{
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 50px;
+}
+
+form, #output{
+  background-color: var(--box-bg);
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 1px 1px 10px 5px white;
+  margin-bottom: 10px;
+}
+
+label, #number, button{
+  font-size: x-large;
+  display: block;
+}
+
+label{
+  width: 170px;
+  height: 50px;
+  margin: 5px auto;
+}
+
+#number{
+  margin: auto;
+  height: 50px;
+}
+
+button{
+  margin: 25px auto 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 4px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+button:hover{
+  background-color: rgb(39, 39, 39);
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+}
+
+.hidden{
+  display: none;
+}
+
+#output{
+  font-size: xx-large;
+  text-align: center;
+  align-content: center;
+}
+
+
+
+
