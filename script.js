@@ -31,35 +31,35 @@ submitBtn.addEventListener('click', (e) => {
   } else {
     outputBox.classList.remove('hidden');
     let reversedInput = userInput.split('').reverse().map(Number);
-    console.log(reversedInput);
     outputBox.innerHTML = conversion(reversedInput);
   }
 });
 
+
 const conversion = (userInput) => {
-  let result = '';
+  let result = [];
   for (let index = 0; index < userInput.length; index++) {
     const digitPlace = 10 ** index;
-    console.log(digitPlace);
     const element = userInput[index] * digitPlace;
     if (element > 0 && element < (4 * digitPlace)) {
       for(let i = 0; i < userInput[index]; i++){
-        result += romanNumerals[1 * digitPlace];
+        result.unshift(romanNumerals[1 * digitPlace]);
       }
     } else if (element === (4 * digitPlace)) {
-      result += romanNumerals[4 * digitPlace];
+      result.unshift(romanNumerals[4 * digitPlace]);
     } else if (element === (5 * digitPlace)) {
-      result += romanNumerals[5 * digitPlace];
+      result.unshift(romanNumerals[5 * digitPlace]);
     } else if (element > (5 * digitPlace) && element < (9 * digitPlace)) {
+      let j = romanNumerals[5 * digitPlace];
       for(let i = 0; i < (userInput[index] - 5); i++){
-        result += romanNumerals[1 * digitPlace];
+        j += romanNumerals[1 * digitPlace];
       }
-      result += romanNumerals[5 * digitPlace];
+      result.unshift(j);
     } else if (element === (9 * digitPlace)) {
-      result += romanNumerals[9 * digitPlace];
+      result.unshift(romanNumerals[9 * digitPlace]);
     } else if (element === (10 * digitPlace)){
-      result += romanNumerals[1 * digitPlace];
+      result.unshift(romanNumerals[1 * digitPlace]);
     }
   }
-  return result.split('').reverse().join('');
+  return result.join('');
 }
